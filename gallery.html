@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hiatt Services | Gallery</title>
+        <link rel="icon" type="image/x-icon" href="/media/favicon.ico">
+        <meta charset='utf-8'>
+        <meta name="DC.title" content="Hiatt Services" />
+        <meta name="geo.region" content="US-WA" />
+        <meta name="geo.placename" content="Spokane" />
+        <meta name="ICBM" content="47.71653, -117.383242" />
+        <meta name = "keywords" content ="Tree services, excavation, logging, tree removal, removal, excavating, excavator">
+        <meta name = "viewport" content = "width=device-width">
+        <meta name = "description" content = "Call 509-342-5082 for tree and excavation services">
+        <meta name = "author" content = "Hiatt Services>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.typekit.net/uci5aaf.css">
+        <link rel="stylesheet" href="/themes/main.css" type="text/css">
+        <link rel="stylesheet" href="https://use.typekit.net/naq1kya.css">
+
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    </head>
+    <div class="sticky-box">
+        <div class="phone-number">
+            <span class="inner-phone">
+                <ion-icon name="call"></ion-icon> <a href="tel:15093425082">(509) 342-5082</a><br>
+            </span>
+        </div>
+    </div>
+    <body>
+        <script id="nav_replace" src="nav.js"></script>
+        <main>
+            <br>
+            <br>
+            <br>
+            <h1>Gallery</h1>
+            <br>
+                
+                <div id="Gallery">
+                    
+                </div>
+            </div>
+        </main>
+        <footer>
+            <script id="foot_replace" src="footer.js"></script>
+        </footer>
+    </body>
+
+    <script src="/BLazy.js"></script>
+    
+
+    <script >
+
+
+        
+            
+        let array = [];
+        let string = JSON.stringify(array);
+        localStorage.setItem("galleryArray", string);
+
+
+        function removeAllChildNodes(parent) {
+            if(parent.childNodes.length > 0)
+            {
+                while (parent.firstChild) {
+                    parent.removeChild(parent.firstChild);
+                }
+            }
+        }
+
+        function shuffle(array) {
+        let currentIndex = array.length,  randomIndex;
+
+        // While there remain elements to shuffle.
+        while (currentIndex > 0) {
+
+            // Pick a remaining element.
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex--;
+
+            // And swap it with the current element.
+            [array[currentIndex], array[randomIndex]] = [
+            array[randomIndex], array[currentIndex]];
+        }
+
+        return array;
+        }
+
+        function buildGallery(){
+            (function() {
+            // Initialize
+            var bLazy = new Blazy();
+            })();
+            var items = [
+                {
+                    catagoryMajor: ["this"],
+                    link: "/media/gallery/01.jpg",
+                    desc: "Brown deck with white railing. lots of stairs"
+                },
+                {
+                    catagoryMajor: ["this"],
+                    link: "/media/gallery/02.jpg",
+                    desc: "Brown deck with white railing. lots of stairs"
+                },
+                {
+                    catagoryMajor: ["this"],
+                    link: "/media/gallery/03.jpg",
+                    desc: "Brown deck with white railing. lots of stairs"
+                },
+                {
+                    catagoryMajor: ["this"],
+                    link: "/media/gallery/04.jpg",
+                    desc: "Brown deck with white railing. lots of stairs"
+                },
+                {
+                    catagoryMajor: ["this"],
+                    link: "/media/gallery/05.jpg",
+                    desc: "Brown deck with white railing. lots of stairs"
+                },
+                {
+                    catagoryMajor: ["this"],
+                    link: "/media/gallery/06.jpg",
+                    desc: "Brown deck with white railing. lots of stairs"
+                },
+                {
+                    catagoryMajor: ["this"],
+                    link: "/media/gallery/07.jpg",
+                    desc: "Brown deck with white railing. lots of stairs"
+                },
+                {
+                    catagoryMajor: ["this"],
+                    link: "/media/gallery/08.jpg",
+                    desc: "Brown deck with white railing. lots of stairs"
+                },
+                {
+                    catagoryMajor: ["this"],
+                    link: "/media/gallery/09.jpg",
+                    desc: "Brown deck with white railing. lots of stairs"
+                },
+                {
+                    catagoryMajor: ["this"],
+                    link: "/media/gallery/10.jpg",
+                    desc: "Brown deck with white railing. lots of stairs"
+                },
+                {
+                    catagoryMajor: ["this"],
+                    link: "/media/gallery/11.jpg",
+                    desc: "Brown deck with white railing. lots of stairs"
+                },
+                {
+                    catagoryMajor: ["this"],
+                    link: "/media/gallery/12.jpg",
+                    desc: "Brown deck with white railing. lots of stairs"
+                },
+
+
+
+                
+            ];
+
+            shuffle(items);
+
+            let gallery = document.getElementById("Gallery");
+            removeAllChildNodes(gallery);
+
+            let string = localStorage.getItem("galleryArray");
+            let array = JSON.parse(string);
+            
+            var rowz = 0;
+            for(var i = 0; i < items.length; i++)
+            {
+                if(rowz % 3 == 0)
+                {
+                    let row = gallery.appendChild(document.createElement("div"));
+                    row.classList.add("row");
+
+                }
+
+                let row = gallery.lastChild;
+                item = items[i];
+                var good = false;
+                if(array.length == 0){
+                    good = true;
+                }
+
+
+                for(var j = 0; j < item.catagoryMajor.length; j++){
+                    if(array.includes(item.catagoryMajor[j])){
+                        good = true;
+                    }
+                }
+
+                if(good == true)
+                {
+                    rowz++;
+                    let elem = row.appendChild(document.createElement("div"));
+                    elem.classList.add("columnSmall");
+                    
+
+                    let lilElem = elem.appendChild(document.createElement("div"));
+                    lilElem.classList.add("container");
+
+                    let lilerElem = lilElem.appendChild(document.createElement("div"));
+                    lilerElem.classList.add("img-zoom");
+
+                    let img = lilerElem.appendChild(document.createElement("img"));
+                    img.setAttribute("data-src",item.link);
+                    img.classList.add("b-lazy");
+                    img.setAttribute("alt",item.desc);
+                }
+                
+            }
+        }
+
+        buildGallery();
+    </script>
+
+</html>

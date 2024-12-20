@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hiatt Services | Contact</title>
+        <link rel="icon" type="image/x-icon" href="/media/favicon.ico">
+        <meta charset='utf-8'>
+        <meta name="DC.title" content="Hiatt Services" />
+        <meta name="geo.region" content="US-WA" />
+        <meta name="geo.placename" content="Spokane" />
+        <meta name="ICBM" content="47.71653, -117.383242" />
+        <meta name = "keywords" content ="Tree services, excavation, logging, tree removal, removal, excavating, excavator">
+        <meta name = "viewport" content = "width=device-width">
+        <meta name = "description" content = "Call 509-342-5082 for tree and excavation services">
+        <meta name = "author" content = "Hiatt Services>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.typekit.net/uci5aaf.css">
+        <link rel="stylesheet" href="/themes/main.css" type="text/css">
+        <link rel="stylesheet" href="https://use.typekit.net/naq1kya.css">
+
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    </head>
+    <div class="sticky-box">
+        <div class="phone-number">
+            <span class="inner-phone">
+                <ion-icon name="call"></ion-icon> <a href="tel:15093425082">(509) 342-5082</a><br>
+            </span>
+        </div>
+    </div>
+    <body>
+        <script id="nav_replace" src="nav.js"></script>
+        <br>
+        <h1 class="title cssanimation sequence fadeInBottom" style="color: black;">Contact Us</h1>       
+
+
+        <main>
+            
+            <div class="thin-space">
+            <h1 class="cssanimation sequence fadeInBottom" style="color: black;">We're excited to hear from you!</h1>
+                <form action="https://formspree.io/f/xnnqeygr" method="POST" class = "contact-form" name="FormName">
+                    <label>
+                        Name:
+                        <input type="text" name="name" style="width: 100%" placeholder="e.g. John Doe" required>
+                    </label>
+                    <label>
+                        Phone number:
+                        <input id="phoneNumber" type="tel" name="phone" style="width: 100%" maxlength="16" placeholder="e.g. (509) 555 - 1234" required>
+                    </label>
+                    <label>
+                        Address:
+                        <input  id="searchTextField"type="text" name="address" required>
+                    </label>
+                    <label>
+                        Email:
+                        <input type="email" name="email" required placeholder="e.g. jdoe555@gmail.com">
+                    </label>
+                    <label>
+                        Message:
+                        <textarea name="message" placeholder="Tell us about the project"></textarea>
+                    </label>
+
+                    <button onclick="gtag_report_conversion(url);" type="submit" class="quoteButton" style="padding-top: 8px; padding-bottom: 8px; padding-left: 12px; padding-right: 12px;"><b>Send</b></button>
+                </form>
+            </div>
+            
+        </main>
+        <footer>
+            <script id="foot_replace" src="footer.js"></script>
+        </footer>
+    </body>
+</html>
+
+
+<script>
+    const isNumericInput = (event) => {
+    const key = event.keyCode;
+    return ((key >= 48 && key <= 57) || // Allow number line
+        (key >= 96 && key <= 105) // Allow number pad
+    );
+};
+
+const isModifierKey = (event) => {
+    for(i=0; i<document.FormName.elements.length; i++) {
+    document.FormName.elements[i].disabled=true;
+    }
+    document.getElementById("surroundingarea").style.backgroundColor = "#CCCCCC";
+    const key = event.keyCode;
+    return (event.shiftKey === true || key === 35 || key === 36) || // Allow Shift, Home, End
+        (key === 8 || key === 9 || key === 13 || key === 46) || // Allow Backspace, Tab, Enter, Delete
+        (key > 36 && key < 41) || // Allow left, up, right, down
+        (
+            // Allow Ctrl/Command + A,C,V,X,Z
+            (event.ctrlKey === true || event.metaKey === true) &&
+            (key === 65 || key === 67 || key === 86 || key === 88 || key === 90)
+        )
+};
+
+const enforceFormat = (event) => {
+    // Input must be of a valid number format or a modifier key, and not longer than ten digits
+    if(!isNumericInput(event) && !isModifierKey(event)){
+        event.preventDefault();
+    }
+};
+
+const formatToPhone = (event) => {
+    if(isModifierKey(event)) {return;}
+
+    const input = event.target.value.replace(/\D/g,'').substring(0,10); // First ten digits of input only
+    const areaCode = input.substring(0,3);
+    const middle = input.substring(3,6);
+    const last = input.substring(6,10);
+
+    if(input.length > 6){event.target.value = `(${areaCode}) ${middle} - ${last}`;}
+    else if(input.length > 3){event.target.value = `(${areaCode}) ${middle}`;}
+    else if(input.length > 0){event.target.value = `(${areaCode}`;}
+};
+
+const inputElement = document.getElementById('phoneNumber');
+inputElement.addEventListener('keydown',enforceFormat);
+inputElement.addEventListener('keyup',formatToPhone);
+</script>
+        
+    </body>
+</html>

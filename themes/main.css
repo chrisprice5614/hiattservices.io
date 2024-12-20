@@ -1,0 +1,492 @@
+
+body {
+
+  overflow-x: hidden;
+  font-family: "Open Sans";
+  font-weight: 400;
+  padding: 0px;
+  margin: 0px;
+  line-height: 1.5em;
+  background-color: #fdfffe;
+
+
+}
+
+:root {
+
+  --containerVert: 500px;
+}
+
+.quoteButton{
+  font-family: "Open Sans";
+  font-weight: 100;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+  padding-left: 2em;
+  padding-right: 2em;
+  background-color: #e3ece5;
+  transition: all 220ms ease-out;
+  border: none;
+  border-width: 1px;
+  border-radius: 6px;
+  border-color: black;
+  box-shadow: 1px 1px 8px rgba(0,0,0,0.8);
+}
+
+.quoteButton:hover{
+  box-shadow:  0px 0px 4px rgba(0,0,0,0.8);
+  color: var(--linkHover);
+  border-color: black;
+  cursor:pointer;
+}
+
+.navhr{
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.bottom{
+  background-image: url("/media/bg.png");
+      background-size: cover;
+}
+
+.logoClassFoot{
+  padding-left: 0;
+  padding-top: 12px;
+  padding-bottom: 0px;
+  width: 100%;
+}
+
+hr{
+  margin:0px;
+  height:1px;
+  border:none;
+  color: rgb(0, 63, 14);
+  background-color: rgb(0, 63, 14);;
+}
+
+.quarter-column {
+  float: left;
+  width: 20%;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+
+}
+
+@media screen and (max-width: 800px) {
+  .quarter-column {
+    float: left;
+    width: 90%;
+    padding-left: 5%;
+    padding-right: 5%;
+  
+  }
+}
+
+.nav{
+    width: 100%;
+    position: fixed;
+    z-index: 9;
+
+      clear: both;
+      float: none;
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      overflow: hidden;
+      text-align: center;
+      opacity: 1;
+      background-image: url("/media/bg.png");
+      background-size: 100% 200%;
+      
+}
+
+.spoiler * .spoiler-in {
+    max-height: 0;
+    margin-top: 5px;
+    overflow: hidden;
+    transition: all 1s ease;
+  }
+  
+  .spoiler:hover * .spoiler-in {
+    max-height: 250px; /*use a big value here*/
+  }
+  
+  
+  @media screen and (max-width: 800px) {
+    .spoiler * .spoiler-in {
+      max-height: 450px; /*use a big value here*/
+      font-size: smaller;
+    }
+  }
+
+.reveal{
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: 1s all ease;
+    overflow: hidden;
+    
+  }
+
+ .reveal.active{
+    transform: translate(0,0);
+    scale: 1;
+    opacity: 1;
+    overflow: hidden;
+  }
+
+video {
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    margin: 0%;
+    padding: 0%;
+  
+  }
+  .video-wrapper {
+    width: 100%;
+    height: 640px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0%;
+    padding: 0%;
+    background-image: url("/media/first.jpg");
+    background-size: cover;
+  }
+
+  .reveal-left{
+    position: relative;
+    transform: translate(-150px,0);
+    opacity: 0;
+    transition: 1s all ease;
+    overflow: hidden;
+  }
+
+  .reveal-right{
+    position: relative;
+    transform: translate(150px,0);
+    opacity: 0;
+    transition: 1s all ease;
+    overflow: hidden;
+  }
+
+.headerVid{
+    position: relative;
+    color: white;
+    text-shadow: 4px 4px 8px rgba(0,0,0,1);
+    text-align: center;
+    
+  }
+
+
+.title {
+    z-index: -50;
+      font-family: "Oswald";
+      font-weight: 600;
+      font-size: 64pt;
+      padding: 40px 0px 0px 0px;
+      line-height: 1.2em;
+      text-align: center;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      
+  }
+
+
+:root {
+    --link: #031400;
+    --linkHover: #009218;
+    --background: #d8c697;
+    --blue: #22B8F5;
+    --containerVert: 500px;
+  }
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .sticky-box{
+    position:sticky;
+    position: -webkit-sticky;
+    top: 0px;
+    font-size: 12pt;
+
+    padding: 2px 20px 2px 2px;
+    z-index: 50;
+    height: 32px;
+    background-color: white;
+  }
+  .inner-phone{
+    display:flex;
+    padding: 6px;
+  }
+  .phone-number{
+    display:flex;
+    float: left;
+    text-align: right;
+    text-justify: right;
+    font-size: 20pt;
+    right: 1px;
+    height: 100%;
+    
+  }
+
+  h1{
+    line-height: normal;
+    text-align: center;
+    font-family: "gelica";
+    font-weight: 400;
+  }
+
+  .thin-space{
+    width: 58%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media all and (max-width: 800px) {
+    .thin-space {
+      width: 90%;
+    }
+  }
+
+  .img-zoom{
+
+    overflow: hidden;
+
+    
+  }
+
+  input[type=text], input[type='tel'], input[type='email'], textarea {
+    box-shadow: inset 0 1px 3px #ddd;
+    width: 100%;
+    padding: 8px 8px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: box-shadow 220ms ease;
+  }
+  
+  input[type=text]:hover, input[type='phone number']:hover, input[type='email']:hover, textarea:hover {
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .1);
+  }
+  
+  input[type=text]:focus, input[type='phone number']:focus, input[type='email']:focus, textarea:focus {
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+  }
+
+  .photo-width{
+    margin-left:25%; margin-right:25%;
+  }
+
+  @media screen and (max-width: 800px) {
+    .photo-width{
+      margin-left:1%; margin-right:1%;
+    }
+  }
+  
+  .img-zoom img {
+    width: 100%;
+    height: 100%;
+    transition: transform .5s ease;
+  }
+  
+  .img-zoom:hover img{
+    
+    transform: scale(1.2);
+  }
+
+  .mattPhoto{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    padding: 12px;
+    border-radius: 12px;
+    box-shadow:  0px 0px 12px rgba(0,0,0,0.8);
+  }
+  
+  .row{
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+
+
+.item{
+    margin: 0;
+      font-size: large;
+      color: var(--link);
+      text-decoration: underline;
+      text-decoration-color: transparent;
+      padding: 18px;
+      transition: all 220ms ease-out;
+      background: none;
+      font-family: "Open Sans";
+      font-weight: 700;
+      
+  }
+
+
+  .item:hover{
+    color:  var(--linkHover);
+    text-decoration-color: var(--linkHover);
+    padding: 18px;
+    text-decoration: underline;
+}
+
+
+a{
+  margin: 0;
+    font-size: large;
+    color: var(--link);
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    transition: all 220ms ease-out;
+    background: none;
+    font-family: "Open Sans";
+    font-weight: 700;
+    
+}
+
+
+a:hover{
+  color:  var(--linkHover);
+  text-decoration-color: var(--linkHover);
+  text-decoration: underline;
+}
+
+.phoneNo{
+  margin: 0;
+    font-size: large;
+    color: #404400;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+
+    transition: all 220ms ease-out;
+    background: none;
+    font-family: "Open Sans";
+    font-weight: 700;
+    
+}
+
+
+.phoneNo:hover{
+  color:  var(--linkHover);
+  text-decoration-color: var(--linkHover);
+
+  text-decoration: underline;
+}
+
+
+.navbar{
+    padding-left: 10%;
+    padding-right: 10%;
+    display: -webkit-box;
+    display: flex;
+    justify-content: space-around;
+    -webkit-box-align: center;
+    align-items: center;
+    background: none;
+    opacity: 1;
+    margin: 0;
+  
+  }
+
+  @media all and (max-width: 800px) {
+    .navbar{
+        display: block;
+    }
+
+}
+
+
+.column {
+  float: left;
+  width: 50%;
+}
+
+.columnSmall {
+  float: left;
+  width: 33.33333%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.row{
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.spoiler * .spoiler-in {
+  max-height: 0;
+  margin-top: 5px;
+  overflow: hidden;
+  transition: all 1s ease;
+}
+
+.spoiler:hover * .spoiler-in {
+  max-height: 250px; /*use a big value here*/
+}
+
+
+@media screen and (max-width: 800px) {
+  .spoiler * .spoiler-in {
+    max-height: 450px; /*use a big value here*/
+    font-size: smaller;
+  }
+}
+.container {
+  position: relative;
+  text-align: center;
+  width: 100%;
+  height: var(--containerVert);
+  overflow-y: hidden;
+}
+
+@media screen and (max-width: 800px) {
+  .column {
+    width: 100%;
+  }
+  .columnSmall {
+    width: 100%;
+  }
+  .container {
+    height: 300px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+    -webkit-box-align: stretch;
+            align-items: stretch;
+  }
+}
+
+
+
+
+.container img{
+  width: 100%;
+  height: var(--containerVert);
+  object-position: middle middle;
+  object-fit: cover;
+}
