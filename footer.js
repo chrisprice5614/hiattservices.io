@@ -1,3 +1,5 @@
+//cSpell:enable
+
 fetch('/footer.html')
 .then(res => res.text())
 .then(text => {
